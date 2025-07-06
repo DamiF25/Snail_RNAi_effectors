@@ -1,4 +1,4 @@
-**NOTE:** **AlphaFold model files store per-residue confidence scores (pLDDT) in the B-factor field and can be used directly in ChimeraX. Therefore, the file conversion step is completely optional but follows as below**
+**NOTE:** **AlphaFold model files store per-residue confidence scores (pLDDT) in the B-factor field and can be used directly in ChimeraX. Therefore, the file conversion step is optional and follows as below.**
 
 Copy the python script in .text and edit input and output file names
 
