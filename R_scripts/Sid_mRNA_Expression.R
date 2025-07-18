@@ -55,7 +55,7 @@ comparisons_list <- strsplit(signif_comparisons$Comparison, " - ")
 data$Tissue <- factor(data$Tissue, levels = c("HF", "OV", "AG", "HP/DG", "T"))
 
 # Define colors
-size_colors <- c("HF" = "#00c4b3", "OV" = "#9b9b9b", "AG" = "#e33b3b", "HP/DG" = "#66b8fd",
+tissue_colors <- c("HF" = "#00c4b3", "OV" = "#9b9b9b", "AG" = "#e33b3b", "HP/DG" = "#66b8fd",
                  "T" = "#d49d00")
 
 # Extend y-axis upper limit just a bit higher (if there is any sig. diff. in the comparisons)
@@ -63,7 +63,7 @@ y_axis_upper <- max(data$Delta_Ct) * 1.15
 
 # Create a box plot with significance annotations
 ggplot(data, aes(x = Tissue, y = Delta_Ct)) +
-  geom_boxplot(fill = size_colors) +
+  geom_boxplot(fill = tissue_colors) +
   geom_jitter(color = "black", position = position_jitter(width = 0.3), size = 2.5) +
   geom_signif(comparisons = comparisons_list, 
               map_signif_level = FALSE, # FALSE shows actual p-values instead of asterisks
