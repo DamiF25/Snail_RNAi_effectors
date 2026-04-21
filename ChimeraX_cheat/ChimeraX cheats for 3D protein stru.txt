@@ -1,0 +1,26 @@
+ChimeraX cheats for 3D protein structure
+
+To customise colour gradient on ChimeraX, use the colormap command
+rainbow palette gold:blue:lightblue:orange:lightgreen:orange
+
+To select a sequence region in chain A, use e.g., select /A:257-359
+
+To color a selected segment deep pink – color sel deep pink
+OR use Hexcode colours, e.g color sel #009999
+To unselect – Control+leftclick
+TO DELETE/HIDE region with low prediction (<50)
+Convert .cif to .pdb in Pyhton
+Open the .pbd file in ChimeraX
+Use “color bfactor” to color the structure based on prediction score (or click on Molecular display >> b-factor). Lower-scoring region blue.
+Go to ‘Select’. 
+Choose ‘By attribute value’
+Make the following changes;
+Attributes of “Atom”
+Select >> Attribute: “bfactor”
+Change value to 50 by manual entry and dragging the two green poles into the middle.
+Select ‘between thresholds (inclusive)’
+Click ‘Apply’
+ALTERNATIVELY, run the command below:
+select #2#!1@@bfactor>=50.0 & @@bfactor<=50.0
+NB: in #2#, 2 is the number of the protein structure in the ‘Models’ interface.
+delete sel
