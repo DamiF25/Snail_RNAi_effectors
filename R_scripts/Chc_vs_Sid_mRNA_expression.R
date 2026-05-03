@@ -23,7 +23,7 @@ shapiro_results <- data %>%
   group_by(Tissue) %>%
   summarise(
     shapiro_Chc1_p = shapiro.test(Chc1)$p.value,
-    shapiro_Sid1_p = shapiro.test(Sid1)$p.value
+    shapiro_Sid1_p = shapiro.test(Sid1L)$p.value
   )
 
 # Print results
@@ -118,6 +118,7 @@ p <- ggplot(data_long, aes(x = Tissue, y = Expression, fill = Gene, color = Gene
         legend.text = element_text(size = 20), 
         legend.title = element_text(size = 20, face = "bold"),
         legend.key.height = unit(0.7, "cm"),
+        legend.key.spacing.y = unit(0.2, "cm"),
         panel.border = element_rect(linewidth = 1.0, fill = NA))
 
 # Print plot
